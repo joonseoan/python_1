@@ -13,10 +13,8 @@ print("Hello World!")  # Double quotes
 print("Hello World!" + ' in Python')  # Single quote
 print("Hello World!" + " in Python")  # + operator
 print("Hello World!", " in Python")  # comma ==> another space
-print("Hello World!"
-      " in Python")  # no space
-print("Hello World!"
-      ' in Python')  # Single quote
+print("Hello World!"" in No Space")  # no space (not different from a single space below)
+print("Hello World!" ' in Single Space')  # Single space
 
 # 2) Manipulation
 # (1) next line
