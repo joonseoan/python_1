@@ -13,8 +13,10 @@ print("Hello World!")  # Double quotes
 print("Hello World!" + ' in Python')  # Single quote
 print("Hello World!" + " in Python")  # + operator
 print("Hello World!", " in Python")  # comma ==> another space
-print("Hello World!"" in No Space")  # no space (not different from a single space below)
-print("Hello World!" ' in Single Space')  # Single space
+print("Hello World!"
+      " in No Space")  # no space (not different from a single space below)
+print("Hello World!"
+      ' in Single Space')  # Single space
 
 # 2) Manipulation
 # (1) next line
@@ -34,13 +36,12 @@ print("input function")
 print("--------------")
 print("")
 
-
 input("What is your name?")
 print("Hello " + input("What is the programmer name?"))
 # Get length of string (It start with index 1, not 0)
 # Also must think about the space. The space should be relfected for the start poistion
 # of the returned value.
-print( len( input("What is your name? ") ) )
+print(len(input("What is your name? ")))
 
 # ---------------------- variable -------------------------------
 # store the value assigned to the variable.
@@ -49,12 +50,18 @@ print("variable")
 print("--------------")
 print("")
 
-name = input("What is your name? ")  # input returns the input value from the user.
+name = input(
+    "What is your name? ")  # input returns the input value from the user.
 print(name)
 
 # variable can be reused
 name = "Angela"
 print(name)
-length = len(name);
+length = len(name)
 print(length)
 
+# ---- Final project ------
+print("Welcome to the Band Name Generator.")
+city = input("What's the name of the city you grew up in?\n")
+pet = input("What's your pet's name?\n")
+print("Your band name could be " + city, pet)
