@@ -1,3 +1,59 @@
+# [ ------------------------ Day2 ----------------------------------- ]
+# Data Types: String, Integer, Float, Bloean
+
+# 1) String
+print("Hello"[0])
+print("Hello"[4])
+print("123" + "456")
+
+# 2) Integer
+print(123 + 456)
+# for large number, we can use "_" intead of ","
+print(123_456_789)  # "_" will be replaced wit "" in print
+
+# 3) Float
+print(3.14334324332523425324346345653563456354653465346
+      )  # 3.1433432433252344 (16th decimal digit only)
+
+# 4) Boolean
+True  # works!!!
+False  # works!!!
+
+# --- type conversion ---
+
+# len works only for String
+# len(123) # type error
+
+name_char = len(input("What is your name? "))
+
+# check type
+_type = type(
+    name_char)  # IMPORTANT type() returns object type, not a String type.
+print(_type)  # It cannot concatenated with String
+
+# if it is not the same type, conver it to the correct type.
+name_char = str(name_char)
+
+# Without converting type, it will generate an error
+# because 'len' returns integer type.
+# Then the integer type cannot concatenated with String (it can Java and Javascript)
+print("Your name has " + name_char + " characters")
+
+a = int("123")
+b = str(123)
+bb = float(b)
+print(a + bb)  # 246.0 because is float has more comprehensive scope
+
+c = a == b
+print(c)
+d = float(b)
+print(type(d))
+
+# Error
+# e = int("afdadfaf")  # invalid literal error
+
+print()
+# [ ------------------------ Day1 ----------------------------------- ]
 # Write your code below this line 👇
 
 # ------------------- print function -------------------------
