@@ -1,6 +1,29 @@
 # [ ------------------------ Day2 ----------------------------------- ]
-# Data Types: String, Integer, Float, Bloean
 
+# ======== Mathmatical operator ====
+print("======== Math operator ===========")
+3 + 5
+7 - 4
+3 * 2
+6 / 3
+print(6 / 3) # [IMPORTANT] it always returns float type! -> 2.0
+
+# [IMPORTANT]: exponent! to increase power
+exp = 2 ** 3 # 8
+print(exp) # 8
+
+# PEMDAS (Prioirty) with LR (left to right)
+# ()
+# **
+# * / (always left one first)
+# + - (always left one first)
+
+print(3/3 + 3*3 - 3) # / * have the same priority so that left one "/" first. --> 7.0
+
+
+
+#  ======= Data Types: String (str), Integer (int), Float (float), Bloean (bool) ===
+print("======== Data type ===========")
 # 1) String
 print("Hello"[0])
 print("Hello"[4])
@@ -27,8 +50,7 @@ False  # works!!!
 name_char = len(input("What is your name? "))
 
 # check type
-_type = type(
-    name_char)  # IMPORTANT type() returns object type, not a String type.
+_type = type(name_char)  # IMPORTANT type() returns object type, not a String type.
 print(_type)  # It cannot concatenated with String
 
 # if it is not the same type, conver it to the correct type.
