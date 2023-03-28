@@ -1,3 +1,18 @@
+# [ ------------------------ Day3 ----------------------------------- ]
+# ======== if ~ else ====
+print("")
+print("============= if ~ else ============")
+print("Welcome to the rollercoaster!")
+height = int(input("What is your height in cm? "))
+
+# [IMPORTANT]
+# Operators: >, <, >=, <=, ==, !=  (Same as the one in Java)
+
+if height > 120:
+    print("You can ride the rollercoaster!")
+else:
+    print("Sorry, you have to grow taller before you can ride.")
+
 # [ ------------------------ Day2 ----------------------------------- ]
 
 # ======= Project ===========
@@ -9,7 +24,8 @@
 #Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
 
 #Write your code below this line 👇
-
+print("")
+print("================ project =================")
 print("Welcome to the tip calculator.")
 total_bill = float(input("What was the total bill? $"))
 tip_percent = int(
@@ -60,6 +76,7 @@ print("======== Math operator ===========")
 7 - 4
 3 * 2
 6 / 3
+6 % 2
 print(6 / 3)  # [IMPORTANT] it always returns float type! -> 2.0
 
 # [IMPORTANT]: exponent! to increase power
