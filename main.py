@@ -1,4 +1,22 @@
 # [ ------------------------ Day3 ----------------------------------- ]
+# ======== if ~ elif ~ else ====
+print("")
+print("======= if ~ elif ~ else =======")
+
+_height = int(input("What is your height in cm? "))
+
+if _height > 120:
+  print("You can ride the rollercoaster!")
+  _age = int(input("How old are you? "))
+  if _age > 18:
+    print("Please pay $15.")
+  elif _age > 12:
+    print("Please pay $12.")
+  else:
+    print("Please pay $7.")
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
 # ======== if ~ else ====
 print("")
 print("============= if ~ else ============")
