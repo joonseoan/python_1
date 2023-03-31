@@ -1,4 +1,41 @@
 # [ ------------------------ Day3 ----------------------------------- ]
+# ======== Logical operator ========
+print("")
+print("======= Logical Operators =======")
+
+# and, or, not
+
+
+height_ = int(input("What is your height in cm? "))
+
+if height_ > 120:
+  print("You can ride the rollercoaster!")
+  _age = int(input("How old are you? "))
+  _bill = 0
+
+  # [IMPORTANT!!!]
+  # Python does not need to use "return" even though the condition satisfies the multiple if statement.
+  # which means if it satisfies the first if statement, it automatically break.
+  if _age < 12:
+    bill = 5
+  elif _age < 17:
+    bill = 8
+  elif _age > 45 and _age <= 60:
+    bill = 1
+  else:
+    bill = 12
+
+  _want_photo = input("Do you want photo? ")
+  
+  if _want_photo == "Y":
+    bill += 3
+    
+  print(f"Your total bill is ${bill}")
+  
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
+
 # ======== Multiple if statements ========
 print("")
 print("======= multiple if statements =======")
