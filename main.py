@@ -1,4 +1,35 @@
 # [ ------------------------ Day3 ----------------------------------- ]
+# ======== Multiple if statements ========
+print("")
+print("======= multiple if statements =======")
+
+height_ = int(input("What is your height in cm? "))
+
+if height_ > 120:
+  print("You can ride the rollercoaster!")
+  _age = int(input("How old are you? "))
+  _bill = 0
+
+  # [IMPORTANT!!!]
+  # Python does not need to use "return" even though the condition satisfies the multiple if statement.
+  # which means if it satisfies the first if statement, it automatically break.
+  if _age < 12:
+    bill = 5
+  elif _age < 17:
+    bill = 8
+  else:
+    bill = 12
+
+  _want_photo = input("Do you want photo? ")
+  
+  if _want_photo == "Y":
+    bill += 3
+    
+  print(f"Your total bill is ${bill}")
+  
+else:
+  print("Sorry, you have to grow taller before you can ride.")
+
 # ======== if ~ elif ~ else ====
 print("")
 print("======= if ~ elif ~ else =======")
@@ -46,14 +77,14 @@ print("")
 print("================ project =================")
 print("Welcome to the tip calculator.")
 total_bill = float(input("What was the total bill? $"))
-tip_percent = int(
-    input("What percentage tip would you like to give? 10, 12, or 15? "))
+tip_percent = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
 num_persons = int(input("How many people to split the bill? "))
 pay_per_person = (total_bill * (1 + tip_percent / 100)) / num_persons
 pay_per_person = "{:.2f}".format(pay_per_person)
 
 print(f"Each person should pay: ${pay_per_person}")
 
+# [IMPORTANT]
 # two decimal number does not always work in terms of even 00, 50 etc.
 # In this case, it print like 22 or 22.5 (not 22.00 or 22.50)
 # print(f"Each person should pay: ${round(pay_per_person, 2)}")
@@ -61,9 +92,7 @@ print(f"Each person should pay: ${pay_per_person}")
 # ======== Mathmatical operator ====
 print("======== Number Manipulation ===========")
 8 / 3  # 2.6666666666666
-print(
-    int(8 / 3)
-)  # [IMPORTANT] 2 because it chops off the decimal numbers without any rounding!
+print(int(8 / 3))  # [IMPORTANT] 2 because it chops off the decimal numbers without any rounding!
 print(round(8 / 3))  # 3 because of rounding
 print(round(8 / 3, 2))  # 2.67 because 2 is the number of decimal numbers
 
@@ -85,9 +114,7 @@ print(result)  # 1.0
 score = 0
 height = 1.9
 isWinning = True
-print(
-    f"Your score is {score}, your height is {height}, and your are winning is {isWinning}"
-)  # Same thing in Java and javascript
+print(f"Your score is {score}, your height is {height}, and your are winning is {isWinning}")  # Same thing in Java and javascript
 
 print("======== Math operator ===========")
 3 + 5
@@ -107,8 +134,7 @@ print(exp)  # 8
 # * / (always left one first)
 # + - (always left one first)
 
-print(3 / 3 + 3 * 3 -
-      3)  # / * have the same priority so that left one "/" first. --> 7.0
+print(3 / 3 + 3 * 3 - 3)  # / * have the same priority so that left one "/" first. --> 7.0
 
 #  ======= Data Types: String (str), Integer (int), Float (float), Bloean (bool) ===
 print("======== Data type ===========")
