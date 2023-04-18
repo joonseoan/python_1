@@ -1,4 +1,59 @@
 # [ ------------------------ Day3 ----------------------------------- ]
+# ======== Treasure Island ========
+# ''' ''': allows the line chnage.
+print(''' 
+==== 
+Treasure Island
+====
+''')
+
+left_right = (input("left or right? ")).lower()
+
+if left_right != "left":
+  print("Fall into a hole. Game Over.")
+else:
+  swim_wait = (input("swim or wait? ")).lower()
+
+  if swim_wait != "wait":
+    print("Attacked by trout. Game Over.")
+  else:
+    door = (input("Which door?" )).lower()
+
+    if door == "red":
+      print("Burned by fire. Game Over.")
+    elif door == "blue":
+      print("Eaten by beasts. Game Over.")
+    elif door == "yellow":
+      print("You win!")
+    else: 
+      print("Game Over")
+
+
+
+# ======== Love Cal ===============
+print("")
+print("======= Love Calculator =======")
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+name = (name1 + name2).lower()
+trueCount = name.count("t") + name.count("r") + name.count("u") + name.count("e")
+loveCount = name.count("l") + name.count("o") + name.count("v") + name.count("e")
+length = int(str(trueCount) + str(loveCount))
+prefix = f"Your score is {length}"
+
+if length < 10 or length > 90:
+    print(prefix + ", you go together like coke and mentos.")
+# must 40 ahead of 50!!! 
+elif length >= 40 and length <= 50:
+    print(prefix + ", you are alright together.")
+else:
+    print(prefix + ".") 
+
 # ======== Logical operator ========
 print("")
 print("======= Logical Operators =======")
