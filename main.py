@@ -1,6 +1,8 @@
 # [ ------------------------ Day4 ----------------------------------- ]
 # ======== Randomization (psuedo random generator) ========
 # Python uses 'Mersenne Twister' to generate psudo random number.
+
+# [IMPORTANT]: "askpython.com"
 # "askpython.com" and in the search bar, enter "random module".
 #  ==> It will show us Python random Module.
 print("")
@@ -11,6 +13,7 @@ print(" ====== Randomization ======")
 # [Custom module]
 # importing another module created by myself
 import my_module
+
 print(my_module.pi)
 
 # [API module]
@@ -19,23 +22,26 @@ import random
 
 # 1) Generating random integer
 # - Generating integer between 1 to 10 (inclusive)
-random_integer = random.randint(1, 5);
-print(random_integer);
+random_integer = random.randint(1, 5)
+print(random_integer)
 
 # 2) Generateing floating point number
-random_float = random.random(); # generates the point number between 0 to 1 (exclusive)
-print(random_float);
+random_float = random.random()
+# generates the point number between 0 to 1 (exclusive)
+print(random_float)
 
 # 3) Generating floating point number between 0 to 5
-print(random_float * 5); # 1 * 5 = 5. Therefore it can't be 5 because `random_float` can't be 0 or 1.
+print(random_float * 5)
+# 1 * 5 = 5. Therefore it can't be 5 because `random_float` can't be 0 or 1.
 
 # FYI
 love_score = random.randint(1, 100)
-print(f"Your love score {love_score}.");
+print(f"Your love score {love_score}.")
 
 # [ ------------------------ Day3 ----------------------------------- ]
 # ======== Treasure Island ========
 # ''' ''': allows the line chnage.
+print("")
 print(''' 
 ==== 
 Treasure Island
@@ -45,25 +51,23 @@ Treasure Island
 left_right = (input("left or right? ")).lower()
 
 if left_right != "left":
-  print("Fall into a hole. Game Over.")
+    print("Fall into a hole. Game Over.")
 else:
-  swim_wait = (input("swim or wait? ")).lower()
+    swim_wait = (input("swim or wait? ")).lower()
 
-  if swim_wait != "wait":
-    print("Attacked by trout. Game Over.")
-  else:
-    door = (input("Which door?" )).lower()
+    if swim_wait != "wait":
+        print("Attacked by trout. Game Over.")
+    else:
+        door = (input("Which door?")).lower()
 
-    if door == "red":
-      print("Burned by fire. Game Over.")
-    elif door == "blue":
-      print("Eaten by beasts. Game Over.")
-    elif door == "yellow":
-      print("You win!")
-    else: 
-      print("Game Over")
-
-
+        if door == "red":
+            print("Burned by fire. Game Over.")
+        elif door == "blue":
+            print("Eaten by beasts. Game Over.")
+        elif door == "yellow":
+            print("You win!")
+        else:
+            print("Game Over")
 
 # ======== Love Cal ===============
 print("")
@@ -76,18 +80,20 @@ name2 = input("What is their name? \n")
 
 #Write your code below this line 👇
 name = (name1 + name2).lower()
-trueCount = name.count("t") + name.count("r") + name.count("u") + name.count("e")
-loveCount = name.count("l") + name.count("o") + name.count("v") + name.count("e")
+trueCount = name.count("t") + name.count("r") + name.count("u") + name.count(
+    "e")
+loveCount = name.count("l") + name.count("o") + name.count("v") + name.count(
+    "e")
 length = int(str(trueCount) + str(loveCount))
 prefix = f"Your score is {length}"
 
 if length < 10 or length > 90:
     print(prefix + ", you go together like coke and mentos.")
-# must 40 ahead of 50!!! 
+# must 40 ahead of 50!!!
 elif length >= 40 and length <= 50:
     print(prefix + ", you are alright together.")
 else:
-    print(prefix + ".") 
+    print(prefix + ".")
 
 # ======== Logical operator ========
 print("")
@@ -95,36 +101,34 @@ print("======= Logical Operators =======")
 
 # and, or, not
 
-
 height_ = int(input("What is your height in cm? "))
 
 if height_ > 120:
-  print("You can ride the rollercoaster!")
-  _age = int(input("How old are you? "))
-  _bill = 0
+    print("You can ride the rollercoaster!")
+    _age = int(input("How old are you? "))
+    _bill = 0
 
-  # [IMPORTANT!!!]
-  # Python does not need to use "return" even though the condition satisfies the multiple if statement.
-  # which means if it satisfies the first if statement, it automatically break.
-  if _age < 12:
-    bill = 5
-  elif _age < 17:
-    bill = 8
-  elif _age > 45 and _age <= 60:
-    bill = 1
-  else:
-    bill = 12
+    # [IMPORTANT!!!]
+    # Python does not need to use "return" even though the condition satisfies the multiple if statement.
+    # which means if it satisfies the upper line's "if statement", it automatically breakes.
+    if _age < 12:
+        bill = 5
+    elif _age < 17:
+        bill = 8
+    elif _age > 45 and _age <= 60:
+        bill = 1
+    else:
+        bill = 12
 
-  _want_photo = input("Do you want photo? ")
-  
-  if _want_photo == "Y":
-    bill += 3
-    
-  print(f"Your total bill is ${bill}")
-  
+    _want_photo = input("Do you want photo? ")
+
+    if _want_photo == "Y":
+        bill += 3
+
+    print(f"Your total bill is ${bill}")
+
 else:
-  print("Sorry, you have to grow taller before you can ride.")
-
+    print("Sorry, you have to grow taller before you can ride.")
 
 # ======== Multiple if statements ========
 print("")
@@ -133,29 +137,29 @@ print("======= multiple if statements =======")
 height_ = int(input("What is your height in cm? "))
 
 if height_ > 120:
-  print("You can ride the rollercoaster!")
-  _age = int(input("How old are you? "))
-  _bill = 0
+    print("You can ride the rollercoaster!")
+    _age = int(input("How old are you? "))
+    _bill = 0
 
-  # [IMPORTANT!!!]
-  # Python does not need to use "return" even though the condition satisfies the multiple if statement.
-  # which means if it satisfies the first if statement, it automatically break.
-  if _age < 12:
-    bill = 5
-  elif _age < 17:
-    bill = 8
-  else:
-    bill = 12
+    # [IMPORTANT!!!]
+    # Python does not need to use "return" even though the condition satisfies the multiple if statement.
+    # which means if it satisfies the first if statement, it automatically break.
+    if _age < 12:
+        bill = 5
+    elif _age < 17:
+        bill = 8
+    else:
+        bill = 12
 
-  _want_photo = input("Do you want photo? ")
-  
-  if _want_photo == "Y":
-    bill += 3
-    
-  print(f"Your total bill is ${bill}")
-  
+    _want_photo = input("Do you want photo? ")
+
+    if _want_photo == "Y":
+        bill += 3
+
+    print(f"Your total bill is ${bill}")
+
 else:
-  print("Sorry, you have to grow taller before you can ride.")
+    print("Sorry, you have to grow taller before you can ride.")
 
 # ======== if ~ elif ~ else ====
 print("")
@@ -164,16 +168,16 @@ print("======= if ~ elif ~ else =======")
 _height = int(input("What is your height in cm? "))
 
 if _height > 120:
-  print("You can ride the rollercoaster!")
-  _age = int(input("How old are you? "))
-  if _age > 18:
-    print("Please pay $15.")
-  elif _age > 12:
-    print("Please pay $12.")
-  else:
-    print("Please pay $7.")
+    print("You can ride the rollercoaster!")
+    _age = int(input("How old are you? "))
+    if _age > 18:
+        print("Please pay $15.")
+    elif _age > 12:
+        print("Please pay $12.")
+    else:
+        print("Please pay $7.")
 else:
-  print("Sorry, you have to grow taller before you can ride.")
+    print("Sorry, you have to grow taller before you can ride.")
 
 # ======== if ~ else ====
 print("")
@@ -204,26 +208,36 @@ print("")
 print("================ project =================")
 print("Welcome to the tip calculator.")
 total_bill = float(input("What was the total bill? $"))
-tip_percent = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
+tip_percent = int(
+    input("What percentage tip would you like to give? 10, 12, or 15? "))
 num_persons = int(input("How many people to split the bill? "))
 pay_per_person = (total_bill * (1 + tip_percent / 100)) / num_persons
+
+# [IMPORTANT] 2) set two digit number with `format`
 pay_per_person = "{:.2f}".format(pay_per_person)
 
 print(f"Each person should pay: ${pay_per_person}")
 
-# [IMPORTANT]
+# [IMPORTANT] 1) set two digit number with `round`. It only works whent the digit nubmer like 23.32323232.
 # two decimal number does not always work in terms of even 00, 50 etc.
 # In this case, it print like 22 or 22.5 (not 22.00 or 22.50)
 # print(f"Each person should pay: ${round(pay_per_person, 2)}")
 
 # ======== Mathmatical operator ====
 print("======== Number Manipulation ===========")
-8 / 3  # 2.6666666666666
-print(int(8 / 3))  # [IMPORTANT] 2 because it chops off the decimal numbers without any rounding!
-print(round(8 / 3))  # 3 because of rounding
-print(round(8 / 3, 2))  # 2.67 because 2 is the number of decimal numbers
+# [IMPORTANT] Automatically float type
+print(8 / 3)  # 2.6666666666666
 
-# directly converting float to integer
+# [IMPORTANT] 2 because it chops off the decimal numbers without any rounding!
+print(int(8 / 3))
+
+# [IMPORTANT!!!!] because of rounding, it automatically integer
+print(round(8 / 3))
+
+# 2.67 because 2 is the number of decimal numbers
+print(round(8 / 3, 2))
+
+# [IMPORTANT!!!!] directly converting float to integer
 print(8 // 3)  # 2 because it chops off the all decimal numbers
 print(type(8 // 3))  # int class
 
@@ -241,7 +255,9 @@ print(result)  # 1.0
 score = 0
 height = 1.9
 isWinning = True
-print(f"Your score is {score}, your height is {height}, and your are winning is {isWinning}")  # Same thing in Java and javascript
+print(
+    f"Your score is {score}, your height is {height}, and your are winning is {isWinning}"
+)  # Same thing in Java and javascript
 
 print("======== Math operator ===========")
 3 + 5
@@ -249,7 +265,7 @@ print("======== Math operator ===========")
 3 * 2
 6 / 3
 6 % 2
-print(6 / 3)  # [IMPORTANT] it always returns float type! -> 2.0
+print(6 / 3)  # [IMPORTANT!!!!] it always returns float type! -> 2.0
 
 # [IMPORTANT]: exponent! to increase power
 exp = 2**3  # 8
@@ -261,7 +277,8 @@ print(exp)  # 8
 # * / (always left one first)
 # + - (always left one first)
 
-print(3 / 3 + 3 * 3 - 3)  # / * have the same priority so that left one "/" first. --> 7.0
+print(3 / 3 + 3 * 3 -
+      3)  # / * have the same priority so that left one "/" first. --> 7.0
 
 #  ======= Data Types: String (str), Integer (int), Float (float), Bloean (bool) ===
 print("======== Data type ===========")
@@ -272,7 +289,7 @@ print("123" + "456")
 
 # 2) Integer
 print(123 + 456)
-# for large number, we can use "_" intead of ","
+# [JUST REMIND] for large number, we can use "_" intead of ","
 print(123_456_789)  # "_" will be replaced wit "" in print
 
 # 3) Float
@@ -306,7 +323,9 @@ print("Your name has " + name_char + " characters")
 a = int("123")
 b = str(123)
 bb = float(b)
-print(a + bb)  # 246.0 because is float has more comprehensive scope
+print(
+    a + bb
+)  # [IMPORTANT!!!!!] int + float = float. 246.0 because is float has more comprehensive scope
 
 c = a == b
 print(c)
