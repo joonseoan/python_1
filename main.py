@@ -1,3 +1,38 @@
+# [ ------------------------ Day4 ----------------------------------- ]
+# ======== Randomization (psuedo random generator) ========
+# Python uses 'Mersenne Twister' to generate psudo random number.
+# "askpython.com" and in the search bar, enter "random module".
+#  ==> It will show us Python random Module.
+print("")
+print(" ====== Randomization ======")
+
+# module means the component or lib that are same as javascript.
+
+# [Custom module]
+# importing another module created by myself
+import my_module
+print(my_module.pi)
+
+# [API module]
+# importing random module created by the Python team.
+import random
+
+# 1) Generating random integer
+# - Generating integer between 1 to 10 (inclusive)
+random_integer = random.randint(1, 5);
+print(random_integer);
+
+# 2) Generateing floating point number
+random_float = random.random(); # generates the point number between 0 to 1 (exclusive)
+print(random_float);
+
+# 3) Generating floating point number between 0 to 5
+print(random_float * 5); # 1 * 5 = 5. Therefore it can't be 5 because `random_float` can't be 0 or 1.
+
+# FYI
+love_score = random.randint(1, 100)
+print(f"Your love score {love_score}.");
+
 # [ ------------------------ Day3 ----------------------------------- ]
 # ======== Treasure Island ========
 # ''' ''': allows the line chnage.
