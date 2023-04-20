@@ -1,4 +1,61 @@
 # [ ------------------------ Day4 ----------------------------------- ]
+# ============= List=============
+print("")
+print(" ====== List ======")
+
+# [IMPORTANT]
+# Like javascript the type can be mixed up in the List.
+
+stringData = ["New York", "Colorado", "New Jersey"]
+print(stringData[0])  # Same as in Javascript
+
+# Negative index
+print("")
+print(" -- Negative Index ---")
+print(stringData[-1])  # New Jersey
+print(stringData[-2])  # Colorado
+print(stringData[-3])  # New York
+
+# Assign Value
+print("")
+print(" -- Assign Value ---")
+stringData[0] = "Nebraska"
+print(stringData)
+
+# Add Value(s) in order (push in javascript)
+print("")
+print(" -- Add a single value ---")
+stringData.append("South Carolina")
+stringData.append(1)
+print(stringData)
+
+print("")
+print(" -- Add a bunch of values ---")
+stringData.extend([2, 3, 4])
+print(stringData)
+
+print("")
+print(" -- Split string ---")
+greetings = "Hello, from AskPython".split(", ");
+print(greetings)
+
+# Assignment
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+import random;
+
+last_index = len(names) - 1;
+# 2)
+chooseIndex = random.randint(0, last_index);
+print(f"{names[chooseIndex]} is going to buy the meal today!");
+# 1)
+choices = random.choice(names);
+print(choices + " is going to buy the meal today!");
+
+
 # ======== Randomization (psuedo random generator) ========
 # Python uses 'Mersenne Twister' to generate psudo random number.
 
