@@ -3,6 +3,16 @@
 print("")
 print(" ====== List ======")
 
+print("")
+print(" -- Nested List ---")
+fruits = ["Apple", "Pear", "Orange"]
+vegetables = ["Tomatoes", "Kale", "Spinach", "Celery"]
+
+sum = [fruits, vegetables]
+
+# IMPORTANT!!!!!!!!!!!!!!!!! : We can cast the list to str!!!
+print("sum: " + str(sum))  # [["Apple", "Pear", "Orange"], ["Tomatoes", "Kale", "Spinach", "Celery"]]
+
 # [IMPORTANT]
 # Like javascript the type can be mixed up in the List.
 
