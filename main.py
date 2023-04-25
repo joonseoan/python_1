@@ -1,4 +1,63 @@
 # [ ------------------------ Day4 ----------------------------------- ]
+# ============= Final Project =============
+# Review Day4 tomorrow before heading to Day 5
+
+print("")
+print("Final Project in Day 4");
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+import random;
+
+all = [rock, paper, scissors];
+
+user_input = int(input("Select 1: rock, 2: paper or 3: scissors --> "));
+print(all[user_input - 1]);
+
+computer_input = random.randint(1, 3);
+print(all[computer_input - 1]);
+
+if user_input == computer_input: 
+  print('Tie');
+elif user_input == 1 and computer_input == 2:
+  print("You lost!");
+elif user_input == 1 and computer_input == 3:
+  print("You won!");
+elif user_input == 2 and computer_input == 1:
+  print("You won!");
+elif user_input == 2 and computer_input == 3:
+  print("You lost!");
+elif user_input == 3 and computer_input == 1:
+  print("You lost!");
+else:
+  print("You won!");
+
 # ============= List=============
 print("")
 print(" ====== List ======")
