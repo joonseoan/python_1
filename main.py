@@ -1,9 +1,30 @@
+# [ ------------------------ Day 5----------------------------------- ]
+# ============= for in loop =============
+print("")
+print("for in loop")
+print("")
+
+fruits = ["Apple", "Mango", "Peach", " Pear"]
+
+for fruit in fruits:
+  print(fruit);
+  print(fruit, "pie");
+  # indentation is important!
+  print(fruits);
+print(fruits)
+
 # [ ------------------------ Day4 ----------------------------------- ]
 # ============= Final Project =============
-# Review Day4 tomorrow before heading to Day 5
+print("")
+print("===== sum ====")
+print("")
+
+numbers = [2, 3, 4, 6];
+print(sum(numbers));
 
 print("")
-print("Final Project in Day 4");
+print("==== Final Project in Day 4 ====")
+print("")
 
 rock = '''
     _______
