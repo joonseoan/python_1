@@ -1,4 +1,25 @@
 # [ ------------------------ Day 5----------------------------------- ]
+# ============= for in loop with Range =============
+print("")
+print("===== for in loop with Range =====")
+print("")
+
+# [Basic format]
+# between a and b (`a` is inclusive, but `b` is not inclusive)
+# It works only with `add`
+# for number in range(a, b):
+#   print(number);
+
+# [Example]
+# By default the number increases number++ without the thrid arg.
+# If we want to incarease step by 2
+for _number in range(0, 10, 2):
+  print(_number);
+
+# Opposite way (from the greater number)
+for _number in range(10, -2, -2):
+  print(_number);
+
 # ============= for in loop =============
 print("")
 print("for in loop")
@@ -24,6 +45,7 @@ numbers = [2, 3, 4, 6];
 print(sum(numbers));
 print(max(numbers));
 print(min(numbers));
+
 
 print("")
 print("==== Final Project in Day 4 ====")
