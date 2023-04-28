@@ -20,7 +20,10 @@ print("===== sum ====")
 print("")
 
 numbers = [2, 3, 4, 6];
+# [IMPORTANT]
 print(sum(numbers));
+print(max(numbers));
+print(min(numbers));
 
 print("")
 print("==== Final Project in Day 4 ====")
