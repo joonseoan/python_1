@@ -1,4 +1,61 @@
 # [ ------------------------ Day 5----------------------------------- ]
+# ============= Challenge =============
+print("")
+print("===== Challenge =====")
+print("")
+
+import random
+letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+print("Welcome to the PyPassword Generator!")
+nr_letters= int(input("How many letters would you like in your password?\n")) 
+nr_symbols = int(input(f"How many symbols would you like?\n"))
+nr_numbers = int(input(f"How many numbers would you like?\n"))
+
+# My SOLUTION
+# password_array = [];
+password = "";
+
+for num in range(0, nr_letters):
+  random_letter = random.choice(letters);
+  password += random_letter;
+
+# My SOLUTION
+# random_letter = random.randint(0, len(letters) - 1);
+# password_array.append(letters[random_letter]);
+
+# [IMPORTANT!!!!!]
+# Same as above
+# password_array += letters[random_letter];
+
+
+for num in range(0, nr_symbols):
+  random_symbol = random.choice(symbols);
+  password += random_symbol;
+
+# My SOLUTION
+# random_symbol = random.randint(0, len(symbols) - 1);
+# password_array.append(symbols[random_symbol]);
+
+for num in range(0, nr_numbers):
+  random_number = random.choice(numbers);
+  password += random_number;
+
+# My SOLUTION
+# random_number = random.randint(0, len(numbers) - 1);
+# password_array.append(numbers[random_number]);
+
+print("".join(random.sample(password, len(password))));
+
+# My SOLUTION
+# IMPORTANT `random.shuffle` to shuffle the order of the array elements
+# random.shuffle(password_array);
+
+# My SOLUTION
+# IMPORTANT `string.join` to make the string from the array!!!
+# print(password.join(password_array));
 # ============= for in loop with Range =============
 print("")
 print("===== for in loop with Range =====")
