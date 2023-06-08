@@ -1,3 +1,55 @@
+print("")
+# ======================= Day 6 ==============================
+print("====================== Day6 =================")
+
+print("")
+print("------- function -----------")
+print("")
+
+# built-in functions
+# https://docs.python.org/3/library/functions.html
+
+# custom function
+# keyword `def` which is defining a function.
+# name, for instance, "my_function"
+# finishing : which means everything comes after this line and the indented
+# belongs with the function.
+
+# def my_function():
+# do this
+# Then do this
+# Finally do this
+
+
+def my_function():
+  print("Hello")
+  print("Bye")
+
+
+# call the function
+my_function()
+
+# Get reeborg's world in google. And try.
+# https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%201&url=worlds%2Ftutorial_en%2Fhurdle1.json
+
+# [My Solution]
+# def move_turn_right():
+#     move();
+#     turn_left();
+#     turn_left();
+#     turn_left();
+
+# def move_turn_left():
+#     move();
+#     turn_left();
+
+# def runHurdle():
+#     for num in range(0, 4):
+#         if num == 0 or num == 3: move_turn_left();
+#         else: move_turn_right();
+
+# for num in range(0, 6):
+#     runHurdle();
 # [ ------------------------ Day 5----------------------------------- ]
 # ============= Challenge =============
 print("")
