@@ -3,6 +3,54 @@ print("")
 print("====================== Day6 =================")
 
 print("")
+print("------- while loop -----------")
+print("")
+
+# for vs while
+# ----------------------------------
+    # 1)
+    # for item in list_of_items:
+        #Do something to each item
+
+    # 2)
+    # for number in range(a, b, c)
+    #            or
+    # for number in range(a) ---> 0 to a - 1
+    #    print(number);
+
+    # Use when condition is avaiable and there is no specific range 
+    # while something_is_true:
+    #    Do something repeatedly
+# -----------------------------------
+
+# [My Solution]
+# def move_turn_right():
+#     move();
+#     turn_left();
+#     turn_left();
+#     turn_left();
+
+# def move_turn_left():
+#     move();
+#     turn_left();
+
+# def runHurdle():
+#     for num in range(0, 4):
+#         if num == 0 or num == 3: move_turn_left();
+#         else: move_turn_right();
+
+# number_of_hurdles = 6;
+
+# 2) hurdle 2
+# while not at_goal():
+#     runHurdle();
+
+# 1) hurdle 1
+# while number_of_hurdles > 0:
+#    runHurdle();
+#    number_of_hurdles -= 1;
+
+print("")
 print("------- function -----------")
 print("")
 
