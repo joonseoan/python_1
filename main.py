@@ -6,6 +6,7 @@ print("")
 print("------- while loop challenge --------")
 print("")
 
+# [3] hurdle 3 
 # https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%201&url=worlds%2Ftutorial_en%2Fhurdle1.json
 
 # def turn_right():
@@ -46,6 +47,7 @@ print("")
     #    Do something repeatedly
 # -----------------------------------
 
+# [2] hurdle 2
 # [My Solution]
 # def move_turn_right():
 #     move();
@@ -64,11 +66,11 @@ print("")
 
 # number_of_hurdles = 6;
 
-# 2) hurdle 2
+# 2)
 # while not at_goal():
 #     runHurdle();
 
-# 1) hurdle 1
+# 1)
 # while number_of_hurdles > 0:
 #    runHurdle();
 #    number_of_hurdles -= 1;
@@ -100,6 +102,7 @@ def my_function():
 # call the function
 my_function()
 
+# [1] hurdle 1
 # Get reeborg's world in google. And try.
 # https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%201&url=worlds%2Ftutorial_en%2Fhurdle1.json
 
