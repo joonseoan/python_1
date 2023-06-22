@@ -6,7 +6,9 @@ print("")
 print("------- hangman step 1 --------")
 print("")
 
+
 import random
+
 word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 
@@ -16,10 +18,18 @@ print(f'Pssst, the solution is {chosen_word}.')
 #TODO-1: - Create an empty List called display.
 #For each letter in the chosen_word, add a "_" to 'display'.
 #So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-letter_list = []
+display = []
 
-for _ in range(len(chosen_word)):
-    letter_list.append('_')
+word_length = len(chosen_word)
+
+# 2)
+for _ in range(word_length):
+
+# 1)
+# for _ in chosen_word:
+    display += '_'
+    # 1) mine
+    # letter_list.append('_')
 
 guess = input("Guess a letter: ").lower()
 
@@ -27,17 +37,15 @@ guess = input("Guess a letter: ").lower()
 #If the letter at that position matches 'guess' then reveal that letter in the display at that position.
 #e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
 
-index = 0
 
-for letter in chosen_word:
-    if letter == guess:
-        letter_list[index] = guess
-    index += 1
-    
+for position in range(word_length):
+    if chosen_word[position] == guess:
+        display[position] = guess
+
 #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
 #Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
 
-print(letter_list)
+print(display)
 
 print("")
 print("------- hangman step 1 --------")
