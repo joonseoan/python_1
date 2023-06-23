@@ -3,9 +3,51 @@ print("")
 print("====================== Day 7 =================")
 
 print("")
-print("------- hangman step 1 --------")
+print("------- hangman step 3 --------")
 print("")
 
+import random
+
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+
+#Testing code
+print(f'Pssst, the solution is {chosen_word}.')
+
+#Create blanks
+display = []
+for _ in range(word_length):
+    display += "_"
+
+#TODO-1: - Use a while loop to let the user guess again. The loop should only stop once the user has guessed all the letters in the chosen_word and 'display' has no more blanks ("_"). Then you can tell the user they've won.
+
+def printGuess():
+    guess = input("Guess a letter: ").lower()
+    
+    for position in range(word_length):
+        letter = chosen_word[position]
+    
+        if letter == guess:
+            display[position] = letter
+
+# [IMPORTANT!!!]
+# "_" in display: if "_" exist in list
+# "_" not in display: if "_" does not exist in list
+
+# 2)
+while "_" in display:
+    
+# 1) mine
+# while display.count("_") > 0:
+    printGuess()
+    print(display)
+
+print("Success!! You won")
+
+print("")
+print("------- hangman step 2 --------")
+print("")
 
 import random
 
