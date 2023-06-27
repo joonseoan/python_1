@@ -3,6 +3,14 @@ print("")
 print("====================== Day 7 =================")
 
 print("")
+print("------- hangman step 5 --------")
+print("")
+
+# [Final Result]
+# https://replit.com/@JoonAn1/Day-7-Hangman-5-Start#main.py
+# Need to review List section from the lecture and compare to https://developers.google.com/edu/python/lists#range
+
+print("")
 print("------- hangman step 4 --------")
 print("")
 
