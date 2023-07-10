@@ -42,6 +42,14 @@ def encrypt(text, shift):
 
     # print(f"The encoded text is {encrypted_word}")
 
+def decrypt(plain_text, shift_amount):
+    decrypted_text = ""
+
+    for letter in plain_text:
+        new_index = alphabet.index(letter) - shift_amount
+        # We do not need any alphabet reorganization like `encrypt`
+        decrypted_text += alphabet[new_index]
+    print(decrypted_text)
 
 # https://www.learnbyexample.org/python-list-slicing/
 
@@ -58,7 +66,10 @@ def encrypt(text, shift):
 ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛
 
 #TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message.
-encrypt(text, shift)
+if direction == 'encode':
+    encrypt(plain_text=text, shift_amount=shift)
+else:
+    decrypt(plain_text=text, shift_amount=shift)
 
 print("")
 print("------- Practice 2 --------")
