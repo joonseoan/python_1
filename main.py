@@ -1,4 +1,119 @@
 print("")
+print("====================== Day9 =================")
+
+print("")
+print("------- Nesting Dictionaries --------")
+print("")
+"""
+{
+    "Key1": {}, # Dictionary
+    "Key2": [], # List
+}
+"""
+
+# Nesting List in a dictionary
+travel_log = {
+    "France": ["Paris", "Lille", "Dijon"],
+    "Germany": ["Berlin", "Hamburg", "Stuttgart"],
+}
+
+# Nesting Dictionary in a dictionary
+travel_log2 = {
+    "France": {
+        "cities_visited": ["Paris", "Lille", "Dijon"],
+        "total_visits": 12
+    },
+    "Germany": ["Berlin", "Hamburg", "Stuttgart"],
+}
+
+print("")
+print("------- Python Dictionaries --------")
+print("")
+
+# It is a kind of object in java or javascript
+# Dictionary is useful because they allow us to group together and tag related
+# pieces of information.
+
+# The dictionary has key and value => {key: value}
+# The key should be capitalized and used with "".
+
+# example:
+# { "Bug": "An error in a program that prevents the program ...",
+#   "Function": "A piece of code that we can easily call ... ",
+#   "Loop": "The action of ..."
+# }
+
+programming_dictionary = {
+    "Bug": "An error in a program that prevents the program ...",
+    "Function": "A piece of code that we can easily call ... ",
+    "Loop": "The action of ...",
+    123: "number key works!",
+}
+
+# print all
+print(programming_dictionary)
+# print a property.
+print(programming_dictionary["Bug"])
+
+# [IMPORTANT!!!] => number key works.
+print(programming_dictionary[123])  # Then it points the same memory location.
+
+## Adding a property into a dictionary
+programming_dictionary["Symbol"] = "Python has symbol?"
+print(programming_dictionary)
+
+## edit value (overriding)
+programming_dictionary["Bug"] = "Bug is a bug"  # Object Mutability
+print(programming_dictionary)
+
+## create empty dictionary
+empty_dictionary = {}
+empty_dictionary[0] = "The first element"
+print(empty_dictionary)
+
+## make empty dictionary
+programming_dictionary = {}  # Fully different dictionary from the one above!!!
+print(programming_dictionary)
+
+# Loop through a dictionary
+programming_dictionary["Bug"] = "A moth in computer"
+programming_dictionary["Babry"] = "A cute people"
+programming_dictionary["House"] = "A space to live"
+
+# Same as javascript
+for key in programming_dictionary:
+    print(key, ":", programming_dictionary[key])
+
+#### Coding Challenge ######
+student_scores = {
+  "Harry": 81,
+  "Ron": 78,
+  "Hermione": 99, 
+  "Draco": 74,
+  "Neville": 62,
+}
+# 🚨 Don't change the code above 👆
+
+#TODO-1: Create an empty dictionary called student_grades.
+student_grades = {}
+
+#TODO-2: Write your code below to add the grades to student_grades.👇
+for student in student_scores:
+    score = student_scores[student]
+    grade = ""
+
+    if score > 90:
+      grade = "Outstanding"
+    elif score > 80:
+        grade = "Exceeds Expectations"
+    elif score > 70:
+        grade = "Acceptable"
+    else:
+        grade = "Fail"
+
+    student_grades[student] = grade
+
+print(student_grades)
 # ======================= Day 8 ==============================
 print("====================== Day8 =================")
 
