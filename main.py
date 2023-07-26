@@ -26,6 +26,35 @@ travel_log2 = {
     "Germany": ["Berlin", "Hamburg", "Stuttgart"],
 }
 
+# Nesting Dictionary in a list
+travel_log3 = [{
+    "countries": "France",
+    "cities_visited": ["Paris", "Lille", "Dijon"],
+    "total_visits": 12,
+}, {
+    "countries": "Germany",
+    "cities_visited": ["Berlin", "Hamburg", "Stuttgart"],
+    "total_visits": 33,
+}]
+
+def add_new_country(country, visits, cities):
+    new_element = {}
+    new_element["country"] = country
+    new_element["visits"] = visits
+    new_element["cities"] = cities
+
+    # new_element = {
+    #     "country": country,
+    #     "visits": visits,
+    #     "cities": cities,
+    # }
+
+    travel_log.append(new_element)
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+
+print(travel_log)
+
 print("")
 print("------- Python Dictionaries --------")
 print("")
