@@ -1,6 +1,16 @@
 print("")
 print("====================== Day9 =================")
 
+# [IMPORTANT!!! Please review!!!]
+# Print List for loop: https://developers.google.com/edu/python/lists#range
+# Print List: https://docs.python.org/3/tutorial/datastructures.html
+
+print("")
+print("------- Final Challenge --------")
+print("")
+
+# https://replit.com/@JoonAn1/blind-auction-start#main.py
+
 print("")
 print("------- Nesting Dictionaries --------")
 print("")
