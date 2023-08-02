@@ -1,4 +1,23 @@
 print("")
+print("====================== Day 10 =================")
+print("")
+
+print("")
+print("------- Function ouptput --------")
+print("")
+
+
+def format_name(f_name, l_name):
+    # Important
+    # Capitalize Strings "title()"
+    # f_name.title()
+    # l_name.title()
+    return f"{f_name} {l_name}".title()
+
+
+print(format_name("Angela", "fdafaf"))
+
+print("")
 print("====================== Day9 =================")
 
 # [IMPORTANT!!! Please review!!!]
