@@ -3,22 +3,91 @@ print("====================== Day 10 =================")
 print("")
 
 print("")
+print("------- Docstrings --------")
+print("")
+'''
+Docstrings is to create a documentation as we are coding along in our
+functions or in our other blocks of code. [Important] when we hover in the function call, Docstring will show up as tool tips
+'''
+
+def format_name_2(f_name, l_name):
+    # Docstrings
+    """
+     Take a first and last name and format it to return the title
+     case version of name.
+    """
+    if f_name == "" or l_name == "":
+        return
+
+    return f"{f_name} {l_name}".title()
+
+
+print(
+    format_name_2(input("What is your first name? "),
+                  input("What is your last name? ")))
+
+print("")
 print("------- Function ouptput --------")
 print("")
 
+def is_leap(year):
+  if year % 4 == 0:
+    if year % 100 == 0:
+      if year % 400 == 0:
+        # print("Leap year.")
+        return True
+      else:
+        # print("Not leap year.")
+        return False
+    else:
+    #   print("Leap year.")
+      return True
+  else:
+    # print("Not leap year.")
+    return False
+
+def days_in_month(year, month):
+  if year < 0:
+    return
+  
+  if month > 12 or month < 1:
+    return
+
+  month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  
+  if is_leap(year):
+      month_days[1] = 29
+
+  return month_days[month - 1]
+
+  
+#🚨 Do NOT change any of the code below 
+year = int(input("Enter a year: "))
+month = int(input("Enter a month: "))
+days = days_in_month(year, month)
+print(days)
+
 
 def format_name(f_name, l_name):
-    # Important
+
+    if f_name == "" or l_name == "":
+        return  # return "None" means that it returns nothing
+
+    # [Important]
     # Capitalize Strings "title()"
     # f_name.title()
     # l_name.title()
     return f"{f_name} {l_name}".title()
 
 
-print(format_name("Angela", "fdafaf"))
+print(
+    format_name(input("What is your first name? "),
+                input("What is your last name? ")))
+# print(format_name("Angela", "fdafaf"))
 
 print("")
 print("====================== Day9 =================")
+print("")
 
 # [IMPORTANT!!! Please review!!!]
 # Print List for loop: https://developers.google.com/edu/python/lists#range
