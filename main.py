@@ -3,6 +3,63 @@ print("====================== Day 10 =================")
 print("")
 
 print("")
+print("------- Challenge --------")
+print("")
+
+# Full web site: https://replit.com/@JoonAn1/calculator-start#main.py
+
+def add(a, b):
+    return a + b
+
+def substract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    return a / b
+
+
+def calculator():
+    result_number = float(input("Please enter the first number: "))
+    repeat = True
+
+    operations = {
+        "+": add,
+        "-": substract,
+        "*": multiply,
+        "/": divide,
+    }
+
+    while repeat:
+        for operator_symbol in operations:
+            print(operator_symbol)
+
+        operator = input("Please enter an operator: ")
+        following_number = float(input("Please enter the following number: "))
+        result_number = operations[operator](result_number, following_number)
+        print(f"The result is {result_number}")
+
+        # Continue from the current result number
+        repeat_ask = input("y: calculate with the current result\n" +
+                           "r: calculate from the scratch\n" +
+                           "n: exit\n").lower()
+
+        if repeat_ask == "r":
+            # Should False because the current calculator() call is still True.
+            # Otherwise it will repeat again when the user enters "n"
+            repeat = False
+            calculator()
+        elif repeat_ask == "n":
+            repeat = False
+
+
+calculator()
+
+print("")
 print("------- Docstrings --------")
 print("")
 '''
