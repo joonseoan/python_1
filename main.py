@@ -6,6 +6,9 @@ print("")
 print("------- Capstone 1: Simple Blackjack --------")
 print("")
 
+# project site
+# https://replit.com/@JoonAn1/blackjack-start#main.py
+
 # import art
 import random
 from os import system
