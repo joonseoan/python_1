@@ -1,4 +1,266 @@
 print("")
+print("====================== Day 11 =================")
+print("")
+
+print("")
+print("------- Capstone 1: Simple Blackjack --------")
+print("")
+
+# import art
+import random
+from os import system
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+# [IMPORTANT!!!!!!!!]
+# Should not be used
+# because in python, it is  always these values even after manipulation
+# in the function.
+# user_cards = []
+# user_cards_sum = 0
+# computer_cards = []
+# computer_cards_sum = 0
+
+repeat = True
+
+
+def get_cards_sum(current_cards):
+    hasEleven = False
+    indexFound = 0
+    manual_sum = 0
+
+    # In python, len should not add "-1"
+    for index in range(0, len(current_cards)):
+        if current_cards[index] == 11:
+            hasEleven = True
+            indexFound = index
+            continue
+        else:
+            manual_sum += current_cards[index]
+
+    if hasEleven == True and (manual_sum + 11) > 21:
+        current_cards[indexFound] = 1
+
+    return {"current_cards": current_cards, "sum": sum(current_cards)}
+
+
+def print_current_cards(_user_cards, _user_cards_sum, _computer_cards):
+    print(f"    Your cards: {_user_cards}, current score: {_user_cards_sum}")
+    print(f"    Computer's first card: {_computer_cards[0]}")
+
+
+def play_computer_cards(_computer_cards, _computer_cards_sum):
+    if _computer_cards_sum < 17:
+        _computer_cards.append(random.choice(cards))
+        _computer_cards_sum = get_cards_sum(_computer_cards)
+
+        return play_computer_cards(_computer_cards_sum["current_cards"],
+                                   _computer_cards_sum["sum"])
+    else:
+        # It can be an list
+        return {
+            "final_computer_cards": _computer_cards,
+            "final_computer_cards_sum": _computer_cards_sum,
+        }
+
+
+def do_user_black_jack(
+    _user_cards,
+    _user_cards_sum,
+    _computer_cards,
+    _computer_cards_sum,
+):
+
+    final_computer_result = {}
+
+    continue_question = input(
+        "Type 'y' to get another card, type 'n' to pass: ").lower()
+
+    if continue_question == "n":
+        final_computer_result = play_computer_cards(_computer_cards,
+                                                    _computer_cards_sum)
+
+        return {
+            "user_final_cards":
+            _user_cards,
+            "user_final_sum":
+            _user_cards_sum,
+            "computer_final_cards":
+            final_computer_result["final_computer_cards"],
+            "computer_final_sum":
+            final_computer_result["final_computer_cards_sum"],
+        }
+    else:
+        _user_cards.append(random.choice(cards))
+        _user_cards_sum = get_cards_sum(_user_cards)
+        print_current_cards(_user_cards_sum["current_cards"],
+                            _user_cards_sum["sum"], _computer_cards)
+
+        if _user_cards_sum["sum"] <= 21:
+            return do_user_black_jack(_user_cards_sum["current_cards"],
+                                      _user_cards_sum["sum"], _computer_cards,
+                                      _computer_cards_sum)
+
+        elif _user_cards_sum["sum"] > 21:
+            final_computer_result = play_computer_cards(
+                _computer_cards, _computer_cards_sum)
+
+            return {
+                "user_final_cards":
+                _user_cards_sum["current_cards"],
+                "user_final_sum":
+                _user_cards_sum["sum"],
+                "computer_final_cards":
+                final_computer_result["final_computer_cards"],
+                "computer_final_sum":
+                final_computer_result["final_computer_cards_sum"],
+            }
+
+
+def compare(result):
+    user_final_cards = result["user_final_cards"]
+    user_final_sum = result["user_final_sum"]
+    computer_final_cards = result["computer_final_cards"]
+    computer_final_sum = result["computer_final_sum"]
+
+    print(
+        f"    Your final hand: {user_final_cards}, final score: {user_final_sum}"
+    )
+    print(
+        f"    Computer's final hand: {computer_final_cards}, final score: {computer_final_sum}"
+    )
+
+    if user_final_sum > 21:
+        print("You lose")
+    elif user_final_sum == 21:
+        if computer_final_sum == 21:
+            print("You draw")
+        else:
+            print("You win")
+    else:
+        if computer_final_sum > 21:
+            print("You win")
+        elif computer_final_sum == 21:
+            print("You lose")
+        else:
+            user_diff = 21 - user_final_sum
+            computer_diff = 21 - computer_final_sum
+
+            if user_diff > computer_diff:
+                print("You lose")
+            elif user_diff == computer_diff:
+                print("You draw")
+            else:
+                print("You win")
+
+
+def init_blackjack():
+    system('clear')
+    # print(art.logo)
+
+    _user_cards = random.sample(cards, 2)
+    _user_cards_sum = get_cards_sum(_user_cards)
+    _computer_cards = random.sample(cards, 2)
+    _computer_cards_sum = get_cards_sum(_computer_cards)
+
+    print_current_cards(_user_cards_sum["current_cards"],
+                        _user_cards_sum["sum"],
+                        _computer_cards_sum["current_cards"])
+
+    return {
+        "User_Cards": _user_cards_sum["current_cards"],
+        "User_Cards_Sum": _user_cards_sum["sum"],
+        "Computer_Cards": _computer_cards_sum["current_cards"],
+        "Computer_Cards_Sum": _computer_cards_sum["sum"],
+    }
+
+
+while (repeat):
+    repeat_question = input(
+        "Do you want to play a balckjack? type 'y' for yes, or 'n' for no. "
+    ).lower()
+
+    if repeat_question == "n":
+        repeat = False
+        print("BYE!!!!!")
+    else:
+        initial_values = init_blackjack()
+
+        if initial_values["User_Cards_Sum"] == 21 or initial_values[
+                "Computer_Cards_Sum"] == 21:
+            compare(initial_values)
+        else:
+            result = do_user_black_jack(initial_values["User_Cards"],
+                                        initial_values["User_Cards_Sum"],
+                                        initial_values["Computer_Cards"],
+                                        initial_values["Computer_Cards_Sum"])
+            compare(result)
+
+############### Blackjack Project #####################
+
+#Difficulty Normal 😎: Use all Hints below to complete the project.
+#Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
+#Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
+#Difficulty Expert 🤯: Only use Hint 1 to complete the project.
+
+############### Our Blackjack House Rules #####################
+
+## The deck is unlimited in size.
+## There are no jokers.
+## The Jack/Queen/King all count as 10.
+## The the Ace can count as 11 or 1.
+## Use the following list as the deck of cards:
+## cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+## The cards in the list have equal probability of being drawn.
+## Cards are not removed from the deck as they are drawn.
+## The computer is the dealer.
+
+##################### Hints #####################
+
+#Hint 1: Go to this website and try out the Blackjack game:
+#   https://games.washingtonpost.com/games/blackjack/
+#Then try out the completed Blackjack project here:
+#   http://blackjack-final.appbrewery.repl.run
+
+#Hint 2: Read this breakdown of program requirements:
+#   http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
+#Then try to create your own flowchart for the program.
+
+#Hint 3: Download and read this flow chart I've created:
+#   https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
+
+#Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
+#11 is the Ace.
+#cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+#Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
+#user_cards = []
+#computer_cards = []
+
+#Hint 6: Create a function called calculate_score() that takes a List of cards as input
+#and returns the score.
+#Look up the sum() function to help you do this.
+
+#Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
+
+#Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+
+#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+
+#Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+
+#Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+
+#Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+
+#Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
+
+#Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
+
+
+
+
+print("")
 print("====================== Day 10 =================")
 print("")
 
