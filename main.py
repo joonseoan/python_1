@@ -1,4 +1,96 @@
 print("")
+print("====================== Day 12 =================")
+print("")
+
+print("")
+print("------- Scope and name --------")
+print("")
+
+enemies = 1
+
+
+# Example that I am confused with in Python
+def increase_enemies():
+    enemies = 2
+    print(f"enemies inside function: {enemies}")  # 2
+
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")  # Still 1
+
+
+# ---- Local Scope ----
+# The local scope exists within functions!
+def drink_potion():
+    # This variable is only accessible inside of this function
+    potion_strength = 2
+    print('potion_strength', potion_strength)
+
+
+drink_potion()
+# print(potion_strength)  # Error: 'NameError': name 'potion_strength' is not defined
+
+# --- Global Scope ----
+# The only difference between Local scope and Global scope is where we define or
+# where we create variables
+
+player_health = 10
+
+
+def drink_potion2():
+    potion_strength = 2
+    # It can access to Global Scope `player_health`
+    print('player_health inside: ', player_health)
+
+
+# [IMPORTANT!!!]: it works fine before function call.
+# player_health = 10
+
+drink_potion2()
+# player_health = 10 # Generate Error
+
+print('player_health outside: ', player_health)
+
+# --- This concept of global and local scope does not apply to variables. It applies to functions and anything else we name. This concept called `Namespace` ---
+
+# For instance, `drink_potion`, `player_health`, `potion_strength`, and etc...any thing we give name to ahs a namespace and that name space is valid in certain scope.
+
+
+def play():
+
+    def drink_potion3():
+        potion_strength = 2
+        # It can still access to Global Scope `player_health`
+        print('player_health inside: ', player_health)
+
+
+# We can't call the nested function because each namespace has valid scope.
+# drink_potion3()
+
+# --- There is no block scope in Python ---
+# What this means is that if we were to create an if statement, for, while and etc.
+
+game_level = 3
+enemies = ["Skeleton", "Zombie", "Alien"]
+
+if game_level < 5:
+    new_enemy = enemies[0]
+
+# Important!!
+# We can still access to `new_enemy` created in if statement block
+print("new_enemy: ", new_enemy)
+
+
+def create_enemy():
+    if game_level < 5:
+        new_enemy_2 = enemies[0]
+
+
+# [IMPORTANT!]
+# Now it does not work because the variable inside function becomes the local scope
+# print("new_enemy_2: ", new_enemy_2)
+
+print("")
 print("====================== Day 11 =================")
 print("")
 
