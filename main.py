@@ -3,7 +3,73 @@ print("====================== Day 12 =================")
 print("")
 
 print("")
-print("------- Scope and name --------")
+print("------- Constant --------")
+print("")
+
+# Naming convention
+PI = 3.14159
+URL = 'http://www.python.ca'
+TWITTER_HANDLE = "@yu_angela"
+
+
+
+print("")
+print("------- Scope 2 --------")
+print("")
+
+enemies2 = 1
+enemies3 = 1
+
+# [IMPORTANT!] Better example. Use the `return!`
+def increase_enemies3():
+    return enemies3 + 1
+
+enemies3 = increase_enemies3()
+print(f"global enemies3 inside function: {enemies3}")
+
+
+
+
+# An example of modifying the global variable within function
+# [IMPORTANT]!!!
+# However, if we use this global variable modification, it will be confusing us. Therefore, we should minimize the modification
+def increase_enemies2():
+    # [IMPORATNT]
+    # How can we handle this?
+    # enemies2 = 0; # Must define to use "+="
+    # enemies2 += 2 # Without the new variable declarlation within the function scope, it will generate an error. How should we handle this to increase the value for global `enemies2`?
+
+    # In order to tap into the global variable and then change it,
+    # we actually have to explicitly say that we have a global variable
+    # that is defined somewhere outside of this function.
+    global enemies2
+
+    # [IMPORATANT!!!] for the global variable, not defined in upside,
+    # the kind of hoisting DOES NOT works
+    # The global variable should be defined upside first
+    # global enemies
+    # print(f"global variable enemies not in defined {enemies}")
+
+    enemies2 += 1
+    
+    # [IMPORATNT] It generates the undefined nameErrors the a
+    # enemies += 2
+
+    print(f"global enemies2 inside function: {enemies2}") # 2 now
+
+    # [IMPORTANT] 
+    # print(f"global enemies inside function {enemies}")
+
+
+increase_enemies2()
+print(f"global enemies1 outside function: {enemies2}")
+
+# [IMPORTANT] Not working because it is the same global scope!!
+# print(f"global enemies2 outside function: {enemies1}")
+
+
+print("")
+print("------- Scope 1 --------")
 print("")
 
 enemies = 1
