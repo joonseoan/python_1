@@ -3,6 +3,124 @@ print("====================== Day 12 =================")
 print("")
 
 print("")
+print("------- Challenge --------")
+print("")
+
+#Number Guessing Game Objectives:
+
+# Include an ASCII art logo.
+# Allow the player to submit a guess for a number between 1 and 100.
+# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer.
+# If they got the answer correct, show the actual answer to the player.
+# Track the number of turns remaining.
+# If they run out of turns, provide feedback to the player.
+# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+
+# text art site : http://patorjk.com/software/taag/#p=display&f=Basic&t=Guess%20the%20Number
+
+from random import randint
+# from logo import art_logo
+
+# ---------------- Teacher solution ------------------
+# EASY_LEVEL_ATTEMPS = 10
+# HARD_LEVEL_ATTEMPS = 5
+
+
+# def getAttemps():
+#     level = input("Choose a difficulty. Type 'easy' or 'hard': ")
+
+#     if level == 'easy':
+#         turns = EASY_LEVEL_ATTEMPS
+#     else:
+#         turns = HARD_LEVEL_ATTEMPS
+
+#     return turns
+
+
+# def check_answer(answer, guess, turns):
+#     """checks answer against guess. Returns the number of turns retmaining"""
+#     if guess > answer:
+#         print("Too High")
+#         return turns - 1
+#     elif guess < answer:
+#         print("Too Low")
+#         return turns - 1
+#     else:
+#         print(f"You got it! The answer was {answer}")
+
+
+# def game():
+#     # including both 1, 100.
+#     print("Welcome to the Number Guessing Game!")
+#     print("I am thinking of a number between 1 and 100")
+#     answer = randint(1, 100)
+#     print(f"anser: {answer}")
+
+#     turns = getAttemps()
+
+#     # Please make sure!!!
+#     # while loop is able to control global variable!
+#     guess = 0
+#     while guess != answer:
+#         print(f"You have {turns} attemps remaining to guess the number")
+#         # In while loop, we can change the global variable
+#         guess = int(input("Make a guess: "))
+#         # Update turns
+#         turns = check_answer(answer, guess, turns)
+
+#         if turns == 0:
+#             print("You've run out of guesses, you lose.")
+#             break  # or return
+#         elif guess != answer:
+#             print("Guess again.")
+
+
+# game()
+
+# ---------------- My Sloution ------------------
+
+# print(art_logo)
+print("Welcome to 'Guess the Number' game!")
+print("I'am thinking of a number between 1 and 100.")
+selected_number = randint(1, 100)
+user_guess = 0
+
+game_difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
+
+if game_difficulty == "easy":
+    number_of_chances = 10
+else:
+    number_of_chances = 5
+
+
+def play_number(user_guess):
+    if user_guess > selected_number or user_guess < selected_number:
+        if user_guess > selected_number:
+            print("Too high")
+        else:
+            print("Too low")
+    else:
+        print("You got it!")
+        print(f"The selected number is {selected_number}")
+
+while user_guess != selected_number:
+    print(
+        f"You have {number_of_chances} attempts remaiing to guess the number")
+
+    user_guess = int(input("Make a guess: "))
+    play_number(user_guess)
+    
+    number_of_chances -= 1
+
+    if number_of_chances == 0:
+        print("You've run out of guesses, you lose.")
+        print(f"The selected number is {selected_number}")
+        break
+    elif user_guess != selected_number:
+        print("Guess again!")
+
+
+print("")
 print("------- Constant --------")
 print("")
 
@@ -26,8 +144,6 @@ def increase_enemies3():
 
 enemies3 = increase_enemies3()
 print(f"global enemies3 inside function: {enemies3}")
-
-
 
 
 # An example of modifying the global variable within function
@@ -62,10 +178,10 @@ def increase_enemies2():
 
 
 increase_enemies2()
-print(f"global enemies1 outside function: {enemies2}")
+print(f"global enemies2 outside function: {enemies2}")
 
 # [IMPORTANT] Not working because it is the same global scope!!
-# print(f"global enemies2 outside function: {enemies1}")
+# print(f"global enemies1 outside function: {enemies1}")
 
 
 print("")
