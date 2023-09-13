@@ -1,4 +1,75 @@
 print("")
+print("====================== Day 13 =================")
+print("")
+
+print("")
+print("------- Debugging --------")
+print("")
+
+############DEBUGGING#####################
+
+# Describe Problem
+# def my_function():
+#     for i in range(1, 21):
+#         # i cannot be 20
+#         if i == 20:
+#             print("You got it")
+
+# my_function()
+
+# Reproduce the Bug
+# from random import randint
+
+# dice_imgs = ["❶", "❷", "❸", "❹", "❺", "❻"]
+# # Because it is random. The previous 1, 6 is out of range.
+# # because 6 is inclusive
+# dice_num = randint(0, 5)
+# print(dice_imgs[dice_num])
+
+# Play Computer. When we enter 1994 as an input, nothing printed
+# We skept 1994 in range.
+# year = int(input("What's your year of birth?"))
+# if year >= 1980 and year < 1994:
+#     print("You are a millenial.")
+# elif year >= 1994:
+#     print("You are a Gen Z.")
+
+# Fix the Errors
+# 1) Indentation Error
+# 2) Omitted f script
+# age = int(input("How old are you?"))
+
+# if age > 18:
+#     print(f"You can drive at age {age}.")
+
+#Print is Your Friend
+# pages = 0
+# word_per_page = 0
+# pages = int(input("Number of pages: "))
+# # == means word_per_page is still 0
+# word_per_page = int(input("Number of words per page: "))
+# total_words = pages * word_per_page
+# print(total_words)
+
+
+# #Use a Debugger: we can use phython tutor
+# https://pythontutor.com/python-debugger.html#mode=edit
+def mutate(a_list):
+    b_list = []
+    for item in a_list:
+        new_item = item * 2
+        b_list.append(new_item)
+
+    # [IMPORTANT!]
+    # b_list.append(new_item) // its output is [26] because python does not have a scope
+
+    print(b_list)
+
+
+mutate([1, 2, 3, 5, 8, 13])
+
+
+print("")
 print("====================== Day 12 =================")
 print("")
 
