@@ -6,6 +6,7 @@ print("")
 print("------- Challenge --------")
 print("")
 
+# https://replit.com/@JoonAn1/guess-the-number-start
 #Number Guessing Game Objectives:
 
 # Include an ASCII art logo.
