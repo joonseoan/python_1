@@ -3,6 +3,211 @@ print("====================== Day 13 =================")
 print("")
 
 print("")
+print("------- Final Challenge in Basic --------")
+print("")
+
+# code: https://replit.com/@JoonAn1/higher-lower-start#main.py
+
+# -------------------- Mine Edition after lecture ------------------
+# from art import logo, vs
+# from game_data import data
+# import random
+# import os
+
+# score = 0
+# compare = random.choice(data)
+# should_repeat_game = True
+
+# print(logo)
+
+# def find_against():
+#     # candidates = random.sample(data, 2)
+#     against = random.choice(data)
+
+#     if compare == against:        
+#         return find_against()
+#     else:
+#         return against
+
+# def compare_followers(compare_follower, against_follower):
+#     if compare_follower > against_follower:
+#         return "a"
+#     else:
+#         return "b"
+
+# def print_candidate(candidate):
+#     print(
+#         f"Compare A: {candidate['name']}, {candidate['description']}, from {candidate['country']} "
+#     )
+
+# while should_repeat_game:
+#     against = compare
+#     compare = find_against()
+    
+#     print_candidate(compare)
+
+#     print(vs)
+
+#     print_candidate(against)
+
+#     computer_answer = compare_followers(
+#         compare['follower_count'],
+#         against['follower_count'],
+#     )
+
+#     user_answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+
+#     os.system('clear')
+#     print(logo)
+
+#     if user_answer != computer_answer:
+#         print(f"Sorry it is wrong. Your final score: {score}.")
+#         should_repeat_game = False
+#     else:
+#         score += 1
+#         print(f"Your right! Current score is {score}.")
+
+# -------------------------- Teacher -------------------------
+# from art import logo, vs
+# from game_data import data
+# from replit import clear
+# import random
+
+# print(logo)
+# score = 0
+# should_repeat_game = True
+# account_b = random.choice(data)
+
+# def format_data(account):
+#     """Takes account data and returns printable format"""
+#     account_name = account["name"]
+#     account_desc = account["description"]
+#     account_country = account["country"]
+#     # [IMPORTANT]
+#     # We can return string f""
+#     return f"{account_name}, a {account_desc}, from {account_country}"
+
+
+# def check_answer(guess, a_followers, b_followers):
+#     """Use if statement to check if user is correct"""
+#     if a_followers > b_followers:
+#         return guess == 'a'
+#     else:
+#         return guess == 'b'
+
+
+# while should_repeat_game:
+#     # [IMPORTANT!!] Even for dictionary, we can use `random.choice()`
+#     account_a = account_b
+#     account_b = random.choice(data)
+
+#    I do not think this logic is correct
+#     # [IMPORTANT] We can compare dictionary like this
+#     if account_a == account_b:
+#         print("It happens????????????????????????????????????????????")
+#         account_b = random.choice(data)
+    
+#     print(f"Compare A: {format_data(account_a)}")
+    
+#     print(vs)
+    
+#     print(f"Against B: {format_data(account_b)}")
+    
+#     guess = input("Who has more followers? Type 'A' or Type 'B': ").lower()
+    
+#     a_follower_account = account_a["follower_count"]
+#     b_follower_account = account_b["follower_count"]
+    
+#     is_correct = check_answer(guess, a_follower_account, b_follower_account)
+
+#     clear()
+#     print(logo)
+    
+#     if is_correct:
+#         score += 1
+#         print(f"You are right. Current your score is {score}")
+#     else:
+#         print(f"Sorry. That was wrong. Your final score is {score}")
+#         should_repeat_game = False
+    
+# --------------------- Teacher End ---------------------------- 
+
+
+# The score should be displayed in final
+# or when the score is more than 0: "Your right!" current score is 1.
+# Display Compare A: with name, job, and where it is from
+# Display the VS logo
+# Display Against:B with name, job, and where it is from
+# Who has nore followers? Type 'A' or 'B':
+# If it is correct, rerender with the new data. clear -> get new random number -> render the new person with logo
+# if it is correct, clear and display Higher and Lower logo with "Sorry, that is wrong. Final score: score"
+
+# ----------------------------- Mine start ---------------------------
+# from art import logo, vs
+# from game_data import data
+# import random
+# import os
+
+# score = 0
+
+# def find_candidates():
+#     candidates = random.sample(data, 2)
+
+#     if candidates[0]['name'] == candidates[1]['name']:
+#         return find_candidates()
+#     elif candidates[0]['follower_count'] == candidates[1]['follower_count']:
+#         return find_candidates()
+#     else:
+#         return candidates
+
+# def compare_followers(compare_follower, against_follower):
+#     if compare_follower > against_follower:
+#         return "A".lower()
+#     else:
+#         return "B".lower()
+
+# user_answer = ""
+# computer_answer = ""
+
+# while user_answer == computer_answer:
+#     print(logo)
+
+#     if score > 0:
+#         print(f"Your right! Current score is {score}.")
+
+#     candidates = find_candidates()
+#     compare = candidates[0]
+#     against = candidates[1]
+
+#     print(
+#         f"Compare A: {compare['name']}, {compare['description']}, from {compare['country']} "
+#     )
+
+#     print(vs)
+
+#     print(
+#         f"Against B: {against['name']}, {against['description']}, from {against['country']} "
+#     )
+
+#     computer_answer = compare_followers(
+#         compare['follower_count'],
+#         against['follower_count'],
+#     )
+
+#     print('COMPUTER ANSWER: ', computer_answer)
+#     user_answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+
+#     os.system('clear')
+
+#     if user_answer != computer_answer:
+#         print(logo)
+#         print(f"Sorry it is wrong. Your final score: {score}.")
+#         break
+#     else:
+#         score += 1
+
+
+print("")
 print("------- Debugging --------")
 print("")
 
